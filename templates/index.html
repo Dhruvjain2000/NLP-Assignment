@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/chatbot.css" rel="stylesheet">
+    <style>
+        /* Add loader styling */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+            display: none; /* Initially hide the loader */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -60px; /* Half of the loader width */
+            margin-top: -60px; /* Half of the loader height */
+            z-index: 999; /* Set z-index to ensure loader is on top of other elements */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h3 class="text-center" style="color: white"><strong>Artificial Intelligence Chatbot</strong></h3>
+        <div class="col-md-6 col-md-offset-3">
+            <div id="chatPanel" class="panel panel-info">
+                <div class="panel-heading">
+                    <strong><span class="glyphicon glyphicon-globe"></span> Type your chat here </strong>
+                    <!-- Move the dropdown menu here -->
+
+                </div>
+                <div class="panel-body fixed-panel">
+                    <ul class="media-list">
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <form method="post" id="chatbot-form" action="/ask">
+
+                        <select class="form-control" name="modelSelection" id="modelSelection">
+                            <option value="gpt2">GPT-2</option>
+                            <option value="custom">Custom</option>
+                            <option value="chatgpt">ChatGPT</option>
+                            <option value="bert">BERT</option>
+                            <option value="fine-tuned-gpt2">Fine Tuned GPT-2</option>
+                            <!-- Add more options for other models if needed -->
+                        </select>
+
+                        <!-- Remove the dropdown menu from here -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter Message" name="messageText"
+                                   id="messageText" autofocus/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="submit" id="chatbot-form-btn">Send</button>
+                                <button class="btn btn-info" type="button" id="chatbot-form-btn-clear">Clear</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add the loader element -->
+    <div id="loader" class="loader"></div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="../static/js/index.js"></script>
+</body>
+</html>

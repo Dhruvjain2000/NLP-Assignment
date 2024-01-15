@@ -1,0 +1,80 @@
+body {
+    background: #4C6B7F; /* Adjusted background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.panel {
+    background-color: #fff;
+    border: 6px solid transparent;
+    border-radius: 25px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    justify-content: center;
+}
+
+.panel-info {
+    border-color: #1A3A4A; /* Adjusted panel border color */
+    min-width: 1000px;
+    min-height: 600px;
+    margin-left: -200px;
+}
+
+.panel-info > .panel-heading {
+    color: #ffffff;
+    background-color: #1A3A4A; /* Adjusted panel heading background color */
+    border-color: #1A3A4A;
+    padding: 15px; /* Added padding */
+    position: relative; /* Added relative positioning */
+}
+
+/* Styling for the dropdown */
+.panel-info > .panel-heading select {
+    width: 150px; /* Adjusted width */
+    margin-left: 10px; /* Added margin */
+    padding: 5px; /* Added padding */
+    border: 1px solid #fff; /* Adjusted border */
+    border-radius: 5px; /* Adjusted border radius */
+    color: #333; /* Adjusted text color */
+}
+
+.panel-info > .panel-heading .model-selection-label {
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #1A3A4A; /* Adjusted panel footer background color */
+    border-top: 1px solid #1A3A4A;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.fixed-panel {
+    min-height: 600px;
+    background-color: #314C5F; /* Adjusted fixed panel background color */
+    color: #ffffff; /* White text color */
+    overflow: auto;
+}
+
+.media-list {
+    overflow: auto;
+    clear: both;
+    display: table;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
+    line-break: strict;
+}
+
+#modelSelection{
+    margin: 10px;
+    width: auto;
+}
